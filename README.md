@@ -1,4 +1,4 @@
-# thesis_7_ver
+# "Conception and Full-Stack Development of a web tool for building energy system evaluation"
 <h1 align="center">Hi 👋, I'm Darima Motta</h1>
 <h3 align="center">A passionate frontend developer from Siberia</h3>
 
