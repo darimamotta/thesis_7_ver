@@ -6,7 +6,7 @@
 
 - 🌱 I’m currently learning **Django**
 
-- 👨‍💻 All of my projects are available at [https://github.com/darimamotta](https://github.com/darimamotta)
+- 👨‍💻 All of my projects are available at [https://github.com/darimamotta](https://github.com/darimamotta) ot at https://www.linkedin.com/in/darima-motta/
 
 - 📫 How to reach me **darimamotta@gmail.com**
 
