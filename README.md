@@ -44,7 +44,7 @@ pip install django-translation-manager
 pip install django-modeltranslation
 pip install django-rosetta
 
-Environment
+## Environment
 Package                    Version
 -------------------------- ------------
 aioredis                   1.3.1
@@ -124,6 +124,14 @@ Werkzeug                   2.0.3
 wrapt                      1.14.0
 zope.interface             5.4.0
  
+## How to run the project 
+cd thesis
+python  manage.py runserver
+
+## Open second terminal to simulate the responsefrom simulation part
+cd thesis
+python  manage.py runserver 127.0.0.2:8002
+
 
 ## Contributing
 #Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
