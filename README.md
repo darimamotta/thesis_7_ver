@@ -44,8 +44,86 @@ pip install django-translation-manager
 pip install django-modeltranslation
 pip install django-rosetta
 
-
-
+Environment
+Package                    Version
+-------------------------- ------------
+aioredis                   1.3.1
+asgiref                    3.4.1
+async-timeout              4.0.2
+attrs                      21.4.0
+autobahn                   22.2.2
+Automat                    20.2.0
+branca                     0.4.2
+Brotli                     1.0.9
+certifi                    2021.10.8
+cffi                       1.15.0
+channels                   3.0.4
+channels-redis             3.3.1
+charset-normalizer         2.0.12
+click                      8.0.4
+colorama                   0.4.4
+constantly                 15.1.0
+cryptography               36.0.1
+daphne                     3.0.2
+dash                       1.20.0
+dash-core-components       1.16.0
+dash-html-components       1.1.3
+dash-renderer              1.9.1
+dash-table                 4.11.3
+decorator                  5.1.1
+Deprecated                 1.2.13
+Django                     3.2.7
+django-admin-tools         0.9.2
+django-cors-headers        3.11.0
+django-crispy-forms        1.14.0
+django-plotly-dash         1.6.6
+django-rosetta             0.9.8
+django-rq                  2.4.1
+django-translation-manager 1.3.0
+djangorestframework        3.13.1
+dpd-components             0.1.0
+Flask                      2.0.3
+Flask-Compress             1.11
+folium                     0.12.1.post1
+future                     0.18.2
+geocoder                   1.38.1
+hiredis                    2.0.0
+hyperlink                  21.0.0
+idna                       3.3
+incremental                21.3.0
+itsdangerous               2.1.1
+Jinja2                     3.0.3
+MarkupSafe                 2.1.0
+msgpack                    1.0.3
+numpy                      1.22.3
+packaging                  21.3
+pip                        21.2.3
+plotly                     5.6.0
+polib                      1.1.1
+pyasn1                     0.4.8
+pyasn1-modules             0.2.8
+pycparser                  2.21
+pyOpenSSL                  22.0.0
+pyparsing                  3.0.7
+pytz                       2021.1
+ratelim                    0.1.6
+redis                      4.1.4
+requests                   2.27.1
+rq                         1.10.1
+service-identity           21.1.0
+setuptools                 57.4.0
+six                        1.16.0
+sqlparse                   0.4.1
+tenacity                   8.0.1
+Twisted                    22.2.0
+twisted-iocpsupport        1.0.2
+txaio                      22.2.1
+typing_extensions          4.1.1
+urllib3                    1.26.8
+Werkzeug                   2.0.3
+wrapt                      1.14.0
+zope.interface             5.4.0
+ 
 
 ## Contributing
 #Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
