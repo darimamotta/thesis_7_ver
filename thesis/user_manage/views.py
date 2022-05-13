@@ -21,7 +21,7 @@ def loginPage(request):
         user = authenticate (request, username=username_try, password=password)
         if user is not None:
             login(request, user)
-            return redirect ('base:home')
+            return redirect ('technology:thesis-index')
         else:
             # messages.error(request,"Username or password incorrect")
             HttpResponse("Username or password incorrect")
@@ -50,3 +50,7 @@ def registerPage(request):
                 'page':page
                 }
     return render (request, 'user_manage/login_register.html',context)
+
+def logoutUser(request):
+    logout (request)
+    return redirect ('technology:thesis-index')

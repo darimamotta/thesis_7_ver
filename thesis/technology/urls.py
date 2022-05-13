@@ -27,8 +27,7 @@ app_name = 'technology'
 urlpatterns = [
     path('', views.index, name='thesis-index'),
     path('page21.html', views.page21, name='thesis-page21'),
-    path('mfh2.html', views.mfhform, name='mfh-form'),
-    path('commercial.html', views.commercialform, name='com-form'),
+   
     path('photo.html', views.photo, name='photo'),
     path('comb.html', views.comb, name='comb'),
     path('gas.html', views.gas, name='gas'),
@@ -40,9 +39,10 @@ urlpatterns = [
     path('page2.html', views.page2, name='thesis-page2'),
     path('page3.html', views.page3, name='thesis-page3'),
     path('tos', views.tosform, name='tos'),
-    path('create-building/<int:addr>', views.create_building_profile, name='create-building'),
-    # path('space/', views.space, name='space'),
+    path('create-building/<int:addr>', views.create_building_profile, name='create-building')
+  
     # path('inputjson/', views.input, name='input'),
+    #path('dashboard', views.show_json_test, name='dashboard'),
 
     #path('web-rest-test', views.show_json_test, name='show-json-test')
 

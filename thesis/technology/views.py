@@ -4,9 +4,9 @@ from plotly.offline import plot
 from plotly.graph_objs import Scatter
 from django.shortcuts import render,redirect
 #from .forms import HeatpumpForm
-from .forms import SfhForm, MfhForm, CommercialForm, TosForm
+from .forms import TosForm
 from technology.forms import BuildingProfileForm
-from .models import Sfh, Mfh, Commercial, Tos
+from .models import  Tos
 from map.models import Address
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -21,7 +21,7 @@ import json
 # Create your views here.
 # Create your views here.
 def index(request):
-      return render(request, 'technology/index.html')
+      return render(request, 'technology/index2.html')
 def translate21 (request):
     return render(request, 'technology/page21.html')
 
@@ -29,15 +29,7 @@ def page2(request):
 
     return render(request,'page2.html' )
 
-def sfh2(request):
-
-    return render(request,'sfh2.html' )
-def mfh2(request):
-
-    return render(request,'mfh2.html' )
-def commercial(request):
-
-    return render(request,'commercial.html' )
+  
 def page1(request):
 
     return render(request,'page1.html' )
@@ -79,62 +71,10 @@ def page3(request):
     return render(request,'technology/page3.html')
 
 
-def sfhform(request):
-    form = SfhForm(request.POST)
-    # if form.is_valid():
-    if request.method == 'POST':
-        Sfh.objects.create(numofpersons = request.POST.get("numofpersonsi"),
-        electricalenergyconsumption =request.POST.get("electricalenergyconsumptioni"),
-        dhwenergyconsumption = request.POST.get("dhwenergyconsumptioni"),
-        buildingsize =request.POST.get("buildingsizei"),)
-        print('data was saved to db')
-        return render(request, 'tos.html')
-
-    return render(request, 'sfh2.html')
-
-
-def mfhform(request):
-    form = MfhForm(request.POST)
-
-    if request.method == 'POST':
-        Mfh.objects.create(numofdwellings= request.POST.get("numofdwellings"),
-                           thermalbuildingstandard=request.POST.get("thermalbuildingstandard"),
-        electricalenergyconsumption =request.POST.get("electricalenergyconsumption"),
-        dhwenergyconsumption = request.POST.get("dhwenergyconsumption"),
-        buildingsize =request.POST.get("buildingsize"),)
-
-
-        return render(request, 'tos.html')
-
-    return render(request, 'mfh2.html')
-
-
-def commercialform(request):
-    form = CommercialForm(request.POST)
-
-    if request.method == 'POST':
-        Commercial.objects.create(electricalenergyconsumption= request.POST.get("electricalenergyconsumption"),
-                           electricalenergyprofiletype=request.POST.get("electricalenergyprofiletype"),
-        thermalbuildingtype =request.POST.get("thermalbuildingtype"),
-        buildingsize =request.POST.get("buildingsize"),)
-
-
-        return render(request, 'tos.html')
-
-    return render(request, 'commercial.html')
 
 
 
-def input(request):
-    sfhpar = [{'numofpersons': '2', 'electricalenergyconsumption': '50','dhwenergyconsumption': '1000', 'buildingsize': '120'}]
 
-    return JsonResponse ({'sfh_parameters': sfhpar}, safe=False)
-
-
-# In production, this should be set as an environment variable
-def space(request):
-    res = requests.get(f"http://api.open-notify.org/astros.json")
-    return JsonResponse(res.json())
 
 
 #-> new 
@@ -146,8 +86,7 @@ def create_building_profile(request, addr):
         form = BuildingProfileForm(request.POST)
         if form.is_valid():
             building_profile = form.save(commit=False)
-            building_profile.user = request.user
-            
+            building_profile.user = request.user            
             building_profile.address = Address.objects.get(id=addr)
             building_profile.building_type= request.POST.get('building_type')
             building_profile.save()
@@ -180,10 +119,13 @@ def tosform(request):
 
 
         #return render(request, 'economic/web_rest_test.html')
-        return redirect('economic:web-rest-test')
+        #return redirect('economic:web-rest-test')
+        return redirect('economic:dashboard')
+        
 
-    #return render(request, 'economic/web_rest_test.html')
-    return redirect('economic:web-rest-test')
+    return render(request, 'economic/web_rest_test.html')
+    #return redirect('economic:web-rest-test')
+    #return redirect('economic:dashboard')
 
 
 

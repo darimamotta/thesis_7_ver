@@ -30,40 +30,9 @@ class Tos(models.Model):
     hsusablecapacity=models.IntegerField(null=True)
     hsratedpower=models.IntegerField(null=True)
     elvehiclesdistance= models.IntegerField(null=True)
-    # -> new
     building = models.ForeignKey(BuildingProfile, on_delete=models.CASCADE, null=True)
-    # <-
+  
 
 # class User (AbstractUser): 
-#     pass
-
-# To DELETE!
-class Sfh(models.Model):
-    #id = models.IntegerField(primary_key=True)
-    #id = models.ForeignKey(Search.id, blank=True, null=True)
-    numofpersons = models.IntegerField(null=True)
-    electricalenergyconsumption = models.IntegerField(null=True)
-    dhwenergyconsumption = models.IntegerField(null=True)
-    buildingsize = models.IntegerField(null=True)
 
 
-#class Meta:
- #   managed = True
-  #  db_table = 'Sfh'
-
-class Mfh(models.Model):
-    #id = models.IntegerField(primary_key=True)
-   #id = models.ForeignKey(Search.id, blank=True, null=True)
-    numofdwellings = models.IntegerField(null=True)
-    thermalbuildingstandard = models.IntegerField(null=True)
-    electricalenergyconsumption= models.IntegerField(null=True)
-    dhwenergyconsumption = models.IntegerField(null=True)
-    buildingsize = models.IntegerField(null=True)
-
-class Commercial(models.Model):
-    #id = models.IntegerField(primary_key=True)
-    #id = models.ForeignKey(Search.id, blank=True, null=True)
-    electricalenergyconsumption = models.IntegerField(null=True)
-    electricalenergyprofiletype = models.CharField(max_length=20, null=True)
-    thermalbuildingtype = models.IntegerField(null=True)
-    buildingsize = models.IntegerField(null=True)

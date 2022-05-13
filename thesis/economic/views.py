@@ -6,7 +6,9 @@ import requests
 # Create your views here.
 
 
-def show_json_test(request):
+
+
+def dashboard(request):
     response = requests.get('http://127.0.0.2:8002/api/res-api/').json()
     toGraph = {
                'With_ElectricityFromGrid': response['WithElectricityStorage']['ElectricityFlowsTotal']['ElectricityFromGrid'],
@@ -28,8 +30,9 @@ def show_json_test(request):
                'With_ElectricityIntoGridFromPV': (response['WithElectricityStorage']['ElectricityFlowsComponents']['ElectricityIntoGridFromPV'])*0.10,
                'With_ElectricityIntoGridFromCHP': (response['WithElectricityStorage']['ElectricityFlowsComponents']['ElectricityIntoGridFromCHP'])*0.05,
     }
-
-    return render(request, 'economic/web_rest_test.html', {'toGraph': toGraph})
+    print ( toGraph["With_GridSupplyCosts_TotalGasFlowFromGrid"])
+    #return render(request, 'economic/web_rest_test.html', {'toGraph': toGraph})
+    return render(request, 'economic/dashboard.html', {'toGraph': toGraph})
 
 
 def economic(request):
@@ -58,7 +61,12 @@ def economic(request):
                                 hydrogen_costs_for_maintenance_and_operations =request.POST.get("hydrogen_costs_for_maintenance_and_operations")
                                 )
         
-        return redirect('economic:web-rest-test')
+        #return redirect('economic:web-rest-test')
+        return redirect('economic/dashboard.html')
   # return render(request, 'technology/web_rest_test.html', context)
-    return redirect('economic:web-rest-test')
+    #return redirect('economic:web-rest-test')
+    return redirect('economic/dashboard.html')
+
+
+
 

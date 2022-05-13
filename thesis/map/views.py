@@ -26,16 +26,12 @@ def map(request):
     else:
         form =AddressForm()
 
- 
-
     location = geocoder.osm(address)
     lat = location.lat
     lng = location.lng
     country = location.country
 
     #Create Map Object
-
-    
     # -> new
     if location is not None and location.current_result is not None:
         m = folium.Map(location=[lat, lng], zoom_start=6)
@@ -45,9 +41,8 @@ def map(request):
         folium.Marker([50.922423, 6.363912], tooltip='Click for more', popup='Jülich').add_to(m)
         address_id=1
 
-    # <-
-    
-    #Get HTML Representation of Ma Object
+       
+    #Get HTML Representation of Map Object
     m = m._repr_html_()
     context = {
         'm': m,

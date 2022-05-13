@@ -1,6 +1,6 @@
 from dataclasses import fields
 from rest_framework import serializers
-from technology.models import Sfh, Mfh, Commercial, Tos, BuildingProfile
+from technology.models import Tos, BuildingProfile
 from django.contrib.auth.models import User
 from map.models import Address
 

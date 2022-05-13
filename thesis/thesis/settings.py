@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    
     'django_plotly_dash.apps.DjangoPlotlyDashConfig',
     'django.contrib.staticfiles',
     'channels',
@@ -46,11 +45,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'rest_framework',
     'corsheaders',
-    'rosetta',
-    
-  
-
-    
+    'rosetta',      
     'map.apps.MapConfig',
     'api.apps.ApiConfig',
     'technology.apps.TechnologyConfig',
@@ -124,21 +119,17 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
-
+#This is optional languages choice.
 LANGUAGE_CODE = 'de'
 
-# Provide a lists of languages which your site supports.
-# from django.utils.translation import gettext_lazy as _
-# LANGUAGES = (
-#     ('de', _('German')),
-#     ('en', _('English')),
-# )
-
 gettext = lambda s: s
+#What languages you want. You shhould iso codes for languages codes.
 LANGUAGES = (
     ('de', gettext('German')),
     ('en', gettext('English')),
 )
+
+#Rosetta store the translation data in this file.
 
 LOCALE_PATHS = (
     BASE_DIR / 'locale',

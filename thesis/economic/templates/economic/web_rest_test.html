@@ -67,6 +67,29 @@
     <script
 src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
 </script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tailwind Admin Starter Template : Tailwind Toolbox</title>
+  <meta name="author" content="name">
+  <meta name="description" content="description here">
+  <meta name="keywords" content="keywords,here">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- JavaScript Bundle with Popper -->
+  
+<script src="./TW-ELEMENTS-PATH/dist/js/index.min.js"></script>
+<canvas id="creditSat"></canvas>
+
+<style>
+  canvas {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+  }
+</style>
     <style type="text/css">
 
 body {
@@ -273,6 +296,9 @@ src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
     width: 50px; height: 50px; background-size: contain;
     background-repeat:no-repeat; float: left">
 </div>
+
+
+<!--test-->
 <!---nav bar-->
 
 
@@ -463,7 +489,7 @@ src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
     <div class="accordion-item">
       <h2 class="accordion-header" id="headingTwo">
         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-          Economic Results
+          {% trans "Economic Results" %} 
         </button>
       </h2>
       <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
@@ -609,7 +635,7 @@ src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
                         <div class="accordion-body"><div class="row align-items-center">
                             <div class="col">
                                       <div class="input-group">                                                                                                                                                                 <div class="input-group-prepend">
-  <span class="input-group-text" >Fixed costs per year in €/year or €/kW</span></div> {{ form.electricity_fixed_costs_per_year }}
+  <span class="input-group-text" >{% trans "Fixed costs per year in €/year or €/kW" %}</span></div> {{ form.electricity_fixed_costs_per_year }}
   <input type="text" class="form-control" name="electricity_fixed_costs_per_year" id="electricity_fixed_costs_per_year" max="1000" min='10' value="15" onchange="rangeelectricity_fixed_costs_per_year.value = electricity_fixed_costs_per_year.value"/>
   <input type="range" oninput="electricity_fixed_costs_per_year.value = rangeelectricity_fixed_costs_per_year.value" class="form-control-range slider" type="range" min="10" max="1000" value="20" id="rangeelectricity_fixed_costs_per_year" step="1" onchange="electricity_fixed_costs_per_year.value = rangeelectricity_fixed_costs_per_year.value" ></div>
      </div> <div class="col">
@@ -638,7 +664,7 @@ src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
     <div class="accordion-item">
       <h2 class="accordion-header" id="flush-headingTwo">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-          Gas
+          {% trans "Gas" %}
         </button>
       </h2>
       <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
@@ -654,14 +680,14 @@ src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
   
   <input type="range" oninput="gas_costs_per_kwh.value = rangegas_costs_per_kwh.value" class="form-control-range slider" type="range" min="5" max="100" value="20" id="rangegas_costs_per_kwh" step="1" onchange="gas_costs_per_kwh.value = rangegas_costs_per_kwh.value" ></div>
   
-  </div></div></div><br></div>
-      </div>
-    </div>
+  </div></div></div></div></div>
+      
+    
   
     <div class="accordion-item">
       <h2 class="accordion-header" id="flush-headingThree">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-          Battery Storage
+          {% trans "Battery Storage" %}
         </button>
       </h2>
       <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
@@ -750,12 +776,12 @@ src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
     </h3></div></div></div></div></div></div><br>
          <div class="row align-items-right">
           <div class="col" align="right">
-              <button type="submit" class="btn btn-success mt-3">Send
-              </button>{% endblock %}</div><br>
+              <button type="submit" class="btn btn-success mt-3">{% trans "Send" %}
+              </button>{% endblock %}</div>
   
           </div></div></div>
       </div>
-  </form><br>
+  </form></div><br>
     <div class="accordion-item">
       <div class="accordion-header" id="headingFive">
         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">

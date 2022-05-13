@@ -1,7 +1,7 @@
 from django import forms
 from django.forms import TextInput
 from django.forms import ModelForm
-from .models import Sfh, Mfh, Commercial, Tos, BuildingProfile
+from .models import Tos, BuildingProfile
 
 class BuildingProfileForm(forms.ModelForm):
     class Meta:
@@ -54,25 +54,6 @@ class TosForm(forms.ModelForm):
     class Meta:
         model = Tos
         fields = '__all__'
-
-
-# To DELETE!
-class SfhForm(forms.ModelForm):
-    class Meta:
-        model = Sfh
-        fields = ['numofpersons', 'electricalenergyconsumption', 'dhwenergyconsumption', 'buildingsize']
-
-
-class MfhForm(forms.ModelForm):
-    class Meta:
-        model = Mfh
-        fields = '__all__'
-
-class CommercialForm(forms.ModelForm):
-    class Meta:
-        model = Commercial
-        fields = '__all__'
-
 
 
 
