@@ -239,7 +239,7 @@
      <li><a href="contact.asp">{% trans "Admin Profile" %}</a></li>
      <li><a href="about.asp">{% trans "About" %}</a></li>
        <li><a href="default.asp">{% trans "Contact" %}</a></li>
-       <li><a href="default.asp">{% trans "Log Out" %}</a></li>
+       <li><a href="{% url 'user_manage:logout' %}">{% trans "Log Out" %}</a></li>
        <li>   <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
        <select class="form-control form-control-sm" id="exampleFormControlSelect1" name="language" onchange="this.form.submit();">
           {% get_current_language as LANGUAGE_CODE %}
