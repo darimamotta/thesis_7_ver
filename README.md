@@ -132,6 +132,10 @@ python  manage.py runserver
 cd thesis
 python  manage.py runserver 127.0.0.2:8002
 
+## Open in admin panel you need to create super user
+python manage.py createsuperuser
+Open in browser http://127.0.0.1:8000/admin/
+
 
 ## Contributing
 #Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
